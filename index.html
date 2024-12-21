@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page</title>
+        <style>
+.iframe
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;  
+    width: 100%;
+    min-height: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+        </style>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <body>
+        <!-- get url from the query string -->
+        <div x-data="{
+            url: new URLSearchParams(window.location.search).get('url')
+        }">
+            <iframe
+                class="iframe"
+                :src="url" allowfullscreen>
+            </iframe>
+        </div>
+    </body>
+</html>
